@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lessons2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string npcName = "Куратор";
+
+            string[] dialoge = {
+                "приветствую тебя",
+                "не хотел бы ты взять академ отпуск?"
+            };
+
+            Console.WriteLine($"{npcName} говорит:");
+            foreach (string line in dialoge)
+            {
+                Console.WriteLine(line);
+                Console.ReadKey();
+            }
+
+            string name2 = "Студент";
+
+            string[] dialoge2 = {
+                "Добрый день",
+                "*в голове: что ответить?",
+                "1-я подумаю",
+                "2-было бы неплохо",
+                "3-сам иди в свой академ"
+            };
+
+            Console.WriteLine($"{name2} говорит:");
+
+            foreach (string line2 in dialoge2)
+            {
+                Console.WriteLine(line2);
+                Console.ReadKey();
+
+                string otvet = Console.ReadLine();
+
+                if (int.TryParse(otvet, out int numer))
+                {
+                    switch (numer)
+                    {
+                        case 1:
+                            {
+                                Console.WriteLine("я подумаю");
+                                return;
+                            }
+                        case 2:
+                            {
+                                Console.WriteLine("было бы неплохо");
+                                return;
+                            }
+                        case 3:
+                            {
+                                Console.WriteLine("сам иди в свой академ");
+                                return;
+                            }
+
+                    }
+
+
+                }
+            }
+
+        }
+
+
+    }
+}
