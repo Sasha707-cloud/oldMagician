@@ -1,0 +1,35 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lessons2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+
+            Dictionary<string, int> player = new Dictionary<string, int> {
+                 { "Здоровье(HP)", 100 },
+                 { "Мана(Mana)", 50 },
+                 { "Сила(Strength)", 20 }
+            };
+
+
+
+            foreach (var p in player)
+            {
+                Console.WriteLine($"{p.Key}: {p.Value}");
+
+                // p.Key — доступ к ключу текущей пары.
+                // p.Value — доступ к значению текущей пары.
+            } 
+        }
+    }
+}
