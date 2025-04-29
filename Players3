@@ -1,0 +1,43 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lessons2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+
+            //создаём коллекцию
+            Queue<string> players = new Queue<string>();
+            players.Enqueue("игрок 1");
+            players.Enqueue("игрок 2");
+            players.Enqueue("игрок 3");
+
+            //создаём возможность для 6 ходов
+
+            for (int i = 1; i < 6; i++)
+            {
+                //удаляется игрок и сохранятеся в переменную 
+                string queuePlayer = players.Dequeue();
+                Console.WriteLine($"ход {i}: {queuePlayer} делает ход");
+
+                //игрока возвращаем в конец очереди
+                players.Enqueue(queuePlayer);
+
+                //выводим игроков в очередь
+                Console.WriteLine($"очередь после хода: " + string.Join(", ", players));
+                Console.WriteLine();
+            }
+
+            
+        }
+    }
+}
